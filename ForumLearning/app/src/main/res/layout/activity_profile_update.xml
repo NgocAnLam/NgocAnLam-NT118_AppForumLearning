@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    tools:context=".ProfileUpdate">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_avatar_default"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Nguyễn Đức Hưng"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:id="@+id/textView1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="19521570@gmail.com"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="77dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:src="@mipmap/profile7" />-->
+
+    <LinearLayout
+        android:id="@+id/profileview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:hint="Họ Tên"
+            android:textColorHint="#B81BD3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_marginBottom="5dp"
+            android:textColorHint="#B81BD3">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_update_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Profile"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_my_question"
+            android:title="My Question" />
+        <item
+            android:id="@+id/nav_comment"
+            android:title="My Comments" />
+
+    </group>
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:title="@string/menu_profile" />
+            <item
+                android:id="@+id/nav_change_password"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_sign_out"
+                android:title="Sign Out" />
+        </menu>
+    </item>
+</menu>

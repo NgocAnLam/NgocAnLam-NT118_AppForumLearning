@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+>
+
+    <LinearLayout
+        android:id="@+id/item_my_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_title_my_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="Title Question"
+            android:textSize="17dp"/>
+        <TextView
+            android:id="@+id/tv_time_my_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="Time"
+            android:layout_marginBottom="10dp"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_update_my_question"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#367A36"
+            android:text="Update" />
+        <Button
+            android:id="@+id/btn_delete_my_question"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="#E91E63"
+            android:text="Delete" />
+    </LinearLayout>
+</LinearLayout>
