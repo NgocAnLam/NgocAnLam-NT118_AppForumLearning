@@ -1,0 +1,32 @@
+#sideBar {
+    border: 1px solid #000000;
+    background-color: #000000 ;
+    width: 15vw;
+    height: 100vh;
+}
+
+#sideBar .menuItems {
+    padding: 10px;
+    margin: 1px 10px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+}
+
+#sideBar .menuItems:hover {
+    background-color: #191434;
+    color: #7960fc;
+}
+
+#content {
+    border: 1px solid #000000;
+    width: 85vw;
+    height: 100vh;
+    background-color: #f4f5fa;
+}
+
+#content .option {
+    margin: 10px;
+    padding: 10px;
+}

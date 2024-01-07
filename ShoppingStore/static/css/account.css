@@ -1,0 +1,48 @@
+body {
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+.mainAccount {
+    text-align: left;
+}
+
+.titleAccount {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.labelAccount {
+    min-width: 200px;
+}
+
+.inputAccount {
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    width: 250px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.submitAccount {
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    background-color: #0b74e5;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 30px;
+    color: #ffffff;
+}
+
+.messageError {
+    color: red;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+    margin-right: 4px;
+}

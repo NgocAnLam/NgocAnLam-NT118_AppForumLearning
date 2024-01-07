@@ -1,0 +1,70 @@
+#accountSideBar {
+    width: 20vw;
+    height: fit-content;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+#accountSideBar .btnAccountSideBar {
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #ffffff;
+}
+
+#accountSideBar .btnAccountSideBarSelected {
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #d4d2d2;
+}
+
+#accountSideBar .btnAccountSideBar:hover {
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+#accountContent {
+    width: 80vw;
+    height: fit-content;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.titleContent {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+
+.imageProduct {
+    width: 80px; 
+    height: 80px; 
+    margin: 10px;
+}
+
+.infoProduct {
+    margin: 10px; 
+    margin-left: 40px; 
+    min-width: 800px; 
+    max-width: 800px;
+}
+
+.totalPrice {
+    margin: 10px; 
+    min-width: 100px;
+}

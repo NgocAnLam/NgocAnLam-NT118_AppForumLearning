@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/category.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/product.css') }}"/>
+</head>
+
+<body id="body">
+    <div class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="headerLogo" style="margin-right: 20px;">
+                <a class="navbar-brand" href="/">Ngọc Dung</a>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="headerMenu">       
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="headerSearch">
+                <input type="text" id="inputSearch">
+                <input type="submit" value="Tìm kiếm" id="btnSearch">
+            </div>           
+
+            <div class="d-flex flex-row account">
+                <div id="divLogin">
+                    <button class="btn btn-secondary" type="button" id="btnLogin"></button>
+                </div>
+                <div id="divAccount">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-left: 84%;">
+                        <a class="dropdown-item" id="userAccount">Thông tin tài khoản</a>
+                        <a class="dropdown-item" id="userOrder">Đơn hàng của tôi</a>
+                        <a class="dropdown-item" id="btnLogout" href="/">Đăng xuất</a>
+                    </div>
+                </div>
+                <div id="divMyShoppingCart">
+                    <button class="btn btn-secondary" type="button" id="btnLoginAccount" onclick="window.location.href='../shoppingCart';">Giỏ hàng</button>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="container">
+        <div class="d-flex flex-row">
+            <div class="divImageProduct">
+                <div><img class="imageProduct" src={{items.thumbnail_url}}></div>
+                {% if items.detail %}
+                    <div>          
+                        <h5 style="margin: 20px;">Đặc điểm nổi bật</h5>
+                        <ul>
+                            {% for item in items.detail[0]['highlight']['items'] %}
+                                <li style="margin-right: 20px; ">{{item}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="divInfoProduct">
+                <!-- Tên sp -->
+                <div class="divDetailProduct">
+                    <h3>{{items.name}}</h3>
+                    <p>Thương hiệu: {{items.brand_name}} | Đánh giá: {{items.rating_average}} ({{items.review_count}}) | Đã bán {{items.quantity_sold}}</p>
+                    <div class="d-flex flex-row">
+                        <h6 id="itemPrice" style="font-size: 30px; font-weight: bold;">{{items.price}}đ</h6>
+                        <p style="margin-left: 30px; background-color: #f5f5fa;">-{{items.discount_rate}}%</p>
+                    </div>
+                </div>                
+
+                <!-- Thanh toán -->
+                <div class="divPaymentProduct">
+                    <div class="d-flex flex-row" style="margin-bottom: 10px;">
+                        <h5 style="margin-right: 40px;">Số lượng</h5>
+                        <div style="margin-right: 40px ;">
+                            <button id="minus" class="btnQuantityProduct">-</button>
+                            <button id="quantity" class="btnQuantityProduct" style="width: 50px;">1</button>
+                            <button id="plus" class="btnQuantityProduct">+</button>
+                        </div>
+                        <h5 style="margin-right: 40px ;">Tạm tính</h5>
+                        <h5 id="calculatePrice"></h5>
+                    </div>
+
+                    <div class="d-flex flex-row">
+                        <button id="btnBuyNow" style="width: 50%; margin-right: 10px;">Mua ngay</button>
+                        <button id="btnAddToCart" style="width: 50%;">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="commentProduct">
+            <div class="generalComment">
+                <h4>Đánh giá sản phẩm</h4>
+                <div class="d-flex flex-row">
+                    <div>Đánh giá: {{items.rating_average}}</div>
+                    <div style="margin: 0px 10px;">|</div>
+                    <div>Số lượt đánh giá: {{items.review_count}}</div>
+                </div>
+                <hr />
+            </div>
+            
+            <div class="d-flex flex-row writeComment">
+                <div id="infoUser"></div>
+                <input type="text" id="writeUser">
+                <button class="btnRating" id="minusRating">-</button>
+                <button class="btnRating" id="scoreRating" style="min-width: 60px;">5</button>
+                <button class="btnRating" id="plusRating" style="margin-right: 30px;">+</button>
+                <button id="postUser">Đăng</button>
+                <hr /><br><br>
+            </div>
+
+            <div class="showComment"></div>
+        </div>
+
+        <div class="specificationsProduct">
+            {% if items.detail %}
+                <h4>Thông tin chi tiết</h4>
+                <div>   
+                    {% for item in items.detail[0]['specifications'][0]['attributes'] %}
+                        <div class="d-flex flex-row align-items-center">
+                            <p style="min-width: 250px; margin: 5px 0px 5px 0px;">{{item.name}}</p>
+                            <p style="margin: 5px 0px 5px 0px;">{{item.value}}</p>    
+                        </div>
+                        <hr width="100%" size="1px" align="center" style="margin: 0px;"/>
+                    {% endfor %}
+                </div>    
+            {% endif %}       
+        </div>
+
+        <div class="descriptionProduct">
+            {% if items.detail %}
+                <h4>Mô tả sản phẩm</h4>
+                <div id="divDescription">{{items.detail[0]['description']}}</div>
+            {% endif %}
+        </div>
+
+        
+        
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
+</body>
+</html>

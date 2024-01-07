@@ -1,0 +1,144 @@
+body {
+    background-color: #f5f5fa;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    height: 7vh;
+    background-color: #ffffff;  
+    border-radius: 10px; 
+}
+
+.header .headerMenu {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.header .headerMenu a {
+    text-decoration: none;
+}
+
+.header .headerSearch {
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.header .headerSearch .formSearch {
+    display: flex; 
+    flex-direction: row; 
+    margin: 0;
+}
+
+.header .account {
+    margin-left: auto;
+}
+
+.header .account #divLogin, #divAccount, #divMyShoppingCart{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.category {
+    width: 20vw; 
+    height: auto; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px 0px 0px 20px;
+}
+
+.category #imgCategory {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.content {
+    background-color: #f5f5fa;
+    width: 80vw;
+    margin: 20px 0px 0px 0px;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+
+.content .card {
+    width: 200px;
+    height: 330px;
+    border: none;
+    transition: box-shadow 0.1s;
+    margin: 0px 4px 4px 0px;
+}
+
+.content .card:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.content .card a {
+    text-decoration: none;
+    color: black;
+}
+ 
+.content .card .card-img {
+    width: 200px;
+    height: 200px;
+}
+
+.content .card .card-body {
+    padding: 5px;
+}
+
+.content .card .card-body .card-title {
+    height: 45px;
+    max-height: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 14px;
+}
+
+.content .card .card-body .card-price {
+    font-weight: bold;
+}
+
+.content .card .card-body .card-discount {
+    margin-left: 30px;
+    background-color: aliceblue;
+}
+
+.content .card .card-body .star {
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.content .card .card-body .quantity {
+    font-size: 12px;
+}
+
+.filter {
+    width: 20vw; 
+    height: auto; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px 10px 0px 20px;
+}
+
+#inputSearch {
+    padding-left: 10px;
+    min-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+}
+
+#btnSearch {
+    color: #0060ff;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+}
